@@ -1,49 +1,18 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/NavBar'
 
 function App() {
 
   return (
-    <>
-      <>
-      <div id="sidebar">
-        <h1>React Router Contacts</h1>
-        <div>
-          <form id="search-form" role="search">
-            <input
-              id="q"
-              aria-label="Search contacts"
-              placeholder="Search"
-              type="search"
-              name="q"
-            />
-            <div
-              id="search-spinner"
-              aria-hidden
-              hidden={true}
-            />
-            <div
-              className="sr-only"
-              aria-live="polite"
-            ></div>
-          </form>
-          <form method="post">
-            <button type="submit">New</button>
-          </form>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <a href={`/contacts/1`}>Your Name</a>
-            </li>
-            <li>
-              <a href={`/contacts/2`}>Your Friend</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div id="detail"></div>
-    </>
-    </>
+    <div className='max-w-screen-xl mx-auto px-2 w-screen'>
+      <Navbar />
+      <main className='mt-8 min-h-screen'>
+        <Outlet />
+      </main>
+      <footer>Footer</footer>
+    </div>
+
   )
 }
 
