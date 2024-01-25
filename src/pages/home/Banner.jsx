@@ -19,9 +19,9 @@ const Banner = () => {
                         Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
                     </h2>
                     <div className="flex mt-3">
-                        <img src="https://randomuser.me/api/portraits/men/97.jpg" className="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
+                        <img src="https://github.com/Gsanchezdiaz.png" className="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
                         <div>
-                            <p className="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                            <p className="font-semibold text-gray-200 text-sm"> Gerson Sanchez </p>
                             <p className="font-semibold text-gray-400 text-xs"> 14 Aug </p>
                         </div>
                     </div>
@@ -39,9 +39,9 @@ const Banner = () => {
                     <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Science</span>
                     <h2 className="text-3xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
                     <div className="flex mt-3">
-                        <img src="https://github.com/Gsanchezdiaz.png" className="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
+                        <img src="https://randomuser.me/api/portraits/men/97.jpg" className="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
                         <div>
-                            <p className="font-semibold text-gray-200 text-sm"> Gerson Sanchez </p>
+                            <p className="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
                             <p className="font-semibold text-gray-400 text-xs"> 15 Aug </p>
                         </div>
                     </div>
