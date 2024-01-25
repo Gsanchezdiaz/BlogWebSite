@@ -8,7 +8,7 @@ import './index.css'
 
 import App from './App.jsx'
 import ErrorPage from './ErrorPage.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/home/Home.jsx';
 
 const router = createBrowserRouter([
   {
