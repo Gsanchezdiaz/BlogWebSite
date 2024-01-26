@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchBlogs } from '../../redux/features/blogs/blogsSlice';
 
 const PostCard = () => {
+    const dispatch = useDispatch();
+    const { blogs, isLoading, isError, error } = useSelector((state) => state.blogs);
+
+    // Hacemos el llamado a los datos del blog
+    useEffect(() => {
+        dispatch(fetchBlogs());
+      }, [dispatch]);
+
+    console.log(blogs)
+
     return (
         <div className="w-full lg:w-2/3">
+            {blogs.map((blog, index) => {
+
+            
             <a className="block rounded w-full lg:flex mb-10"
                 href="#"
+                key={index}
             >
                 <div
                     className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
@@ -30,6 +46,7 @@ const PostCard = () => {
                     </div>
                 </div>
             </a>
+            })}
 
             {/* <div className="rounded w-full lg:flex mb-10">
                 <div className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
