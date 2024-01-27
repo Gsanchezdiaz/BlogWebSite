@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from './Banner'
-import PostCard from '../blogs/PostCard'
+import PostCards from '../blogs/PostCards'
 import Category from './Category'
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
       {/* ----- Boddy ----- */}
       <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
         {/* post cards */}
-        <PostCard />
+        <PostCards />
 
         {/* right sidebar */}
         <Category />
