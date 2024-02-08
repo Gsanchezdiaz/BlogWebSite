@@ -1,11 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Card = ({ blog }) => {
     const { tags } = blog;
     return (
-        <a className="block rounded w-full lg:flex mb-10"
-            href="#"
-        >
+        <Link to={`/blogs/${blog.id}`} className="block rounded w-full lg:flex mb-10">
             <div
                 className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
                 style={{ backgroundImage: `url(${blog.image})` }}
@@ -32,7 +31,7 @@ const Card = ({ blog }) => {
                     </div>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 
