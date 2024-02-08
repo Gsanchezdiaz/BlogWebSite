@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Card = ({ blog, key }) => {
+const Card = ({ blog }) => {
+    const { tags } = blog;
     return (
         <a className="block rounded w-full lg:flex mb-10"
             href="#"
@@ -17,6 +18,9 @@ const Card = ({ blog, key }) => {
                     </div>
                     <p className="text-gray-700 text-base">
                         {blog.content}
+                    </p>
+                    <p className="text-gray-700 text-sm py-1 italic">
+                        Tags: {tags.map((tag, index) => <span key={index} className='mx-1 underline'> {tag} </span>)}
                     </p>
                 </div>
                 <div className="flex mt-3">
