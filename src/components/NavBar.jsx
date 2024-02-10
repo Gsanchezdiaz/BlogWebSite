@@ -26,9 +26,9 @@ const Navbar = () => {
   return (
     <header className={`flex items-center justify-between py-4 border-b z-[10001] transition-all duration-300 ease-in ${isScrolled ? "fixed bg-white shadow-md md:px-32 top-0 left-0 right-0" : ""
       }`}>
-      <a href="/" className="px-2 lg:px-0 uppercase font-bold text-purple-800">
-        XBlog
-      </a>
+      <Link to="/" className="px-2 lg:px-0 uppercase font-bold text-purple-800">
+        Primavera BLOG
+      </Link>
 
       <div className="sm:block hidden">
         <Search />

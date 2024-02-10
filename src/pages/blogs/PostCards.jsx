@@ -6,18 +6,21 @@ import Card from './Card';
 const PostCards = () => {
     const dispatch = useDispatch();
     const { blogs, isLoading, isError, error } = useSelector((state) => state.blogs);
+
+    const { tags, search } = useSelector((state) => state.filter);
+    console.log(tags, search)
     
+    // Hacemos el llamado a los datos del blog
+    useEffect(() => {
+        dispatch(fetchBlogs({ tags, search }));
+    }, [dispatch, tags, search]);
+
     // paginacion del blog
     const [currentPage, setCurrentPage] = useState(1);
     const blogsPerPage = 5;
-    const startIndex = (currentPage -1) * blogsPerPage;
+    const startIndex = (currentPage - 1) * blogsPerPage;
     const endIndex = currentPage * blogsPerPage;
     const paginatedBlogs = blogs.slice(startIndex, endIndex);
-
-    // Hacemos el llamado a los datos del blog
-    useEffect(() => {
-        dispatch(fetchBlogs());
-    }, [dispatch]);
 
     // Funcion de cambio de pagina
     const handlePageChange = (nextPage) => {
@@ -62,20 +65,20 @@ const PostCards = () => {
             }
             {/* Botones de Paginacion */}
             <div className='mb-8 px-8 flex justify-around mt-8'>
-                        <button 
-                            className='px-2 bg-red-500 text-white rounded cursor-pointer' 
-                            onClick={() => (handlePageChange(currentPage - 1))}
-                            disabled={currentPage === 1}>
-                                Previous
-                        </button>
-                        <span>{currentPage}</span>
-                        <button 
-                            className='px-2 bg-blue-500 text-white rounded cursor-pointer'
-                            onClick={() => (handlePageChange(currentPage + 1))}
-                            disabled={currentPage === blogs.length / blogsPerPage}>
-                                Next
-                        </button>
-                    </div>
+                <button
+                    className='px-2 bg-red-500 text-white rounded cursor-pointer'
+                    onClick={() => (handlePageChange(currentPage - 1))}
+                    disabled={currentPage === 1}>
+                    Previous
+                </button>
+                <span>{currentPage}</span>
+                <button
+                    className='px-2 bg-blue-500 text-white rounded cursor-pointer'
+                    onClick={() => (handlePageChange(currentPage + 1))}
+                    disabled={currentPage === blogs.length / blogsPerPage}>
+                    Next
+                </button>
+            </div>
         </div>
     )
 }

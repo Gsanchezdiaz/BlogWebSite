@@ -5,6 +5,8 @@ import { AiOutlineHeart, AiOutlineArrowRight } from 'react-icons/ai'
 import { BiCommentDetail } from 'react-icons/bi'
 import { fetchBlog } from '../../redux/features/singleBlog/blogSlice';
 
+import PopularBlogs from './PopularBlogs';
+
 function SingleBlog() {
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -13,6 +15,7 @@ function SingleBlog() {
     // Hacemos el llamado a los datos del blog
     useEffect(() => {
         dispatch(fetchBlog(id));
+        window.scrollTo(0, 0); // inicia la ventana con el scroll en la parte superior
     }, [dispatch, id]);
 
     console.log(id)
@@ -117,6 +120,7 @@ function SingleBlog() {
                 </a>
             </div>
 
+            <PopularBlogs tags={blog.category} currentBlogId={id}/>
 
         </article>
     )
